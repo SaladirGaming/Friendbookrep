@@ -8,6 +8,7 @@ from kivymd.uix.toolbar import MDToolbar
 from kivy.lang.builder import Builder
 from helpers import username_helper, password_helper
 from kivymd.uix.dialog import MDDialog
+from kivymd.uix.list import OneLineListItem, MDList
 
 
 class Login(MDApp):
@@ -19,6 +20,8 @@ class MainApp(MDApp):
     def build(self):
         screen = MDScreen()
 
+        list_view = MDList()
+
         self.username = Builder.load_string(username_helper)
         self.password = Builder.load_string(password_helper)
 
@@ -27,6 +30,14 @@ class MainApp(MDApp):
         self.toolbar.anchor_title = "center"
         screen.add_widget(self.toolbar)
 
+
+
+        item1= OneLineListItem(text="Item")
+        item2 = OneLineListItem(text="Item")
+
+        list_view.add_widget(item1)
+        list_view.add_widget(item2)
+        screen.add_widget(list_view)
         # Buttons
         login_btn = MDFillRoundFlatButton(
             text="Login",
