@@ -52,6 +52,7 @@ class MainApp(MDApp):
 
     def check_data(self, obj):
 
+        #Ist die Eingabezeile leer?
         if self.username.text is "":
             check_string = "Please enter a username"
 
